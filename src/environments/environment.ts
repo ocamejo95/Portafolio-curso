@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  URL_TEAM: 'https://angular-portafolio-75076-default-rtdb.firebaseio.com/equipo.json',
+  URL_INFO_PAGE: 'assets/data/data-pagina.json',
+  URL_PRODUCTOS: 'https://angular-portafolio-75076-default-rtdb.firebaseio.com/productos_idx.json',
 };
 
 /*

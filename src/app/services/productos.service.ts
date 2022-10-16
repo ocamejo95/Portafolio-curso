@@ -1,21 +1,17 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
+import {ProductosModel} from "../models/productos.model";
 
 @Injectable({
   providedIn: 'root'
 })
-export class InfoPagesService {
-
+export class ProductosService {
 
   constructor(private http: HttpClient) {
   }
 
-  getInfoPage() {
-    return this.http.get(environment.URL_INFO_PAGE);
-  }
-
-  getTeam() {
-    return this.http.get(environment.URL_TEAM);
+  getProductos() {
+    return this.http.get<ProductosModel[]>(environment.URL_PRODUCTOS);
   }
 }
