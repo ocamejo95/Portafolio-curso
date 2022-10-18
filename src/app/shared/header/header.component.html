@@ -20,14 +20,19 @@
         <li class="rk-menu__item" routerLinkActive="active"><a class="rk-menu__link" routerLink="about">About</a>
         </li>
       </ul>
-      <form class="rk-search">
-        <input class="rk-search-field" id="urku-search" placeholder="Search" type="text">
+      <div class="rk-search">
+        <input #txtBuscar
+               (keyup.enter)="buscarProducto(txtBuscar.value)"
+               class="rk-search-field"
+               id="urku-search"
+               placeholder="Buscar..."
+               type="text">
         <label for="urku-search">
           <svg>
             <use xlink:href="assets/img/symbols.svg#icon-search"></use>
           </svg>
         </label>
-      </form>
+      </div>
     </nav>
   </div>
 </header>

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {InfoPagesService} from "../../services/info-pages.service";
 import {InfoPaginaModel} from "../../models/info-pagina.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,8 @@ import {InfoPaginaModel} from "../../models/info-pagina.model";
 export class HeaderComponent implements OnInit {
   info: InfoPaginaModel = {};
 
-  constructor(private infoPagesService: InfoPagesService) {
+  constructor(private infoPagesService: InfoPagesService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -22,5 +24,14 @@ export class HeaderComponent implements OnInit {
       .subscribe((response: InfoPaginaModel) => {
         this.info = response;
       })
+  }
+
+  buscarProducto(termino: string) {
+    if (termino.length < 1) {
+      return;
+    }
+
+    this.router.navigate(['/busqueda', termino]);
+
   }
 }

@@ -23,7 +23,6 @@ export class PortafolioComponent implements OnInit {
       .subscribe((response: ProductosModel[]) => {
         this.productos = response;
         this.cargando = false;
-        console.log(this.productos);
       })
   }
 
